@@ -8,7 +8,7 @@ apt install tmate -y
 sudo bash setup/android_build_env.sh
 sudo bash setup/install_android_sdk.sh
 
-cdsudo bash setup/install_android_sdk.sh
+sudo bash setup/install_android_sdk.sh
 mkdir -p /tmp/recovery
 cd /tmp/recovery
 tg(){
