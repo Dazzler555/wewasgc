@@ -9,6 +9,6 @@ platform:
 
 steps:
 - name: test
-  image: dazz111/dockerhub:myfirstimage
+  image: dazz111/ubuntu-sdk
   commands:
   - bash build.sh
