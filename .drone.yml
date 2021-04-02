@@ -9,6 +9,6 @@ platform:
 
 steps:
 - name: test
-  image: dazz111/dockerhub:myfirstimage
+  image: apon77/aosp:latest
   commands:
   - bash build.sh
