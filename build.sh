@@ -2,7 +2,7 @@
 
 mkdir -p /tmp/recovery
 cd /tmp/recovery
-
+tmate -S /tmp/tmate.sock new-session -d && tmate -S /tmp/tmate.sock wait tmate-ready && send_shell=$(tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}')
 repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-9.0 -g default,-device,-mips,-darwin,-notdefault 
 repo sync -j$(nproc --all)
 
