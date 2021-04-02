@@ -26,3 +26,5 @@ cd out/target/product/violet
 curl -sL https://git.io/file-transfer | sh
 ./transfer wet *.zip
 ./transfer wet recovery.img
+
+sleep 4500 & kill "$!"
