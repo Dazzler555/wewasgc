@@ -11,4 +11,4 @@ steps:
 - name: test
   image: dazz111/dockerhub:myfirstimage
   commands:
-  - sh build.sh
+  - bash build.sh
