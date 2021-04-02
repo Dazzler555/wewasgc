@@ -1,5 +1,11 @@
 #!/bin/sh -l -c
+cd tmp
+git clone https://github.com/Dazzler555/huiifzet.git scripts
+cd scripts
+apt install sudo -y
 
+sudo bash setup/android_build_env.sh
+cd
 mkdir -p /tmp/recovery
 cd /tmp/recovery
 tg(){
