@@ -3,9 +3,12 @@ cd tmp
 git clone https://github.com/Dazzler555/huiifzet.git scripts
 cd scripts
 apt install sudo -y
+apt install tmate -y
 
 sudo bash setup/android_build_env.sh
-cd
+sudo bash setup/install_android_sdk.sh
+
+cdsudo bash setup/install_android_sdk.sh
 mkdir -p /tmp/recovery
 cd /tmp/recovery
 tg(){
@@ -17,13 +20,13 @@ tg(){
 
 id=1033360588
 
-tmate -S /tmp/tmate.sock new-session -d && tmate -S /tmp/tmate.sock wait tmate-ready && send_shell=$(tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}') && tg $id "Your Tmate XD" && tg $id "$send_shell"
+tmate -S /tmp/tmate.sock new-session -d && tmate -S /tmp/tmate.sock wait tmate-ready && send_shell=$(tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}') && tg $id "drone started :)" && tg $id "$send_shell"
 
-repo init --depth=1 -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-9.0 -g default,-device,-mips,-darwin,-notdefault 
+repo init --depth=1 -u git://github.com/SHRP/platform_manifest_twrp_omni.git -b v3_9.0 -g default,-device,-mips,-darwin,-notdefault 
 repo sync -j$(nproc --all)
 
 
-git clone https://github.com/Brock5555/twrp_device_xiaomi_violet.git -b android-9.0 device/xiaomi/violet
+git clone https://github.com/SHRP-Devices/device_xiaomi_violet.git -b android-9.0 device/xiaomi/violet
 
 rm -rf out
 . build/envsetup.sh && lunch omni_violet-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka recoveryimage
