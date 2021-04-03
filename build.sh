@@ -32,4 +32,4 @@ curl -sL https://git.io/file-transfer | sh
 export PWD=$(pwd)
 #curl -F chat_id=1033360588 -F document=*.zip -F parse_mode=markdown https://api.telegram.org/bot1744981054:AAEwTewZaL8Z6K49crBWlfRnW3Zi9Aqim6U/sendDocument
 
-curl -F document=@"$PWD/*.zip" https://api.telegram.org/bot1744981054:AAEwTewZaL8Z6K49crBWlfRnW3Zi9Aqim6U/sendDocument?chat_id=1033360588
+curl -F document=@"drone/src/tmp/recovery/out/target/product/violet/*.zip" https://api.telegram.org/bot1744981054:AAEwTewZaL8Z6K49crBWlfRnW3Zi9Aqim6U/sendDocument?chat_id=1033360588
