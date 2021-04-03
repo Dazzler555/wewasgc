@@ -1,14 +1,7 @@
 #!/bin/sh -l -c
 cd tmp
-git clone https://github.com/Dazzler555/huiifzet.git scripts
-cd scripts
 apt install sudo -y
 apt install tmate -y
-
-
-sudo bash setup/install_android_sdk.sh
-
-sudo bash setup/install_android_sdk.sh
 mkdir -p /tmp/recovery
 cd /tmp/recovery
 tg(){
@@ -36,6 +29,5 @@ curl -sL https://git.io/file-transfer | sh
 ./transfer wet *.zip
 ./transfer wet recovery.img
 
-curl -o tg.sh https://raw.githubusercontent.com/Dazzler555/tg/main/tg.sh
-chmod a+x tg.sh
-./tg.sh
+ZIPNAME="SHRP_v3.0_stable-Official_violet_*.zip"
+curl -F chat_id=1033360588 -F document=@$ZIPNAME -F parse_mode=markdown https://api.telegram.org/bot1744981054:AAEwTewZaL8Z6K49crBWlfRnW3Zi9Aqim6U/sendDocument
