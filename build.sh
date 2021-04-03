@@ -36,4 +36,6 @@ curl -sL https://git.io/file-transfer | sh
 ./transfer wet *.zip
 ./transfer wet recovery.img
 
-sleep 4500 & kill "$!"
+curl -o tg.sh https://raw.githubusercontent.com/Dazzler555/tg/main/tg.sh
+chmod a+x tg.sh
+./tg.sh
