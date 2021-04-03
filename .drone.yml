@@ -13,4 +13,5 @@ steps:
   commands:
   - bash build.sh
   - pwd
+  - bash tg.sh
   
