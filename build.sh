@@ -40,5 +40,7 @@ tg(){
 	msg=$2 # No need to touch
 	curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" --data "text=$msg&chat_id=${your_telegram_id}"
 }
-
-send_zip=$(up out/target/product/violet/recovery.img) && tg $id "Build Succeed! $send_zip"
+PWD(){
+      ~/out/target/product/violet/
+     }
+send_zip=$(up PWD/*img) && tg $id "Build Succeed! $send_zip"
