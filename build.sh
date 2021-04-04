@@ -27,15 +27,20 @@ rm -rf out
 . build/envsetup.sh && lunch omni_violet-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka recoveryimage
 
 cd out/target/product/violet
-curl -sL https://git.io/file-transfer | sh
+curl -sL https://git.io/file-transfer | sh 
+
 ./transfer wet *.zip
 ./transfer wet recovery.img
+
+zip=$(./transfer wet *.zip > zip.txt)
+img=$(./transfer wet recovery.img > img.txt)
+
 up(){
 	curl --upload-file $1 https://transfer.sh/$(basename $1); echo
 	# 14 days, 10 GB limit
 }
 tg(){
-	bot_api=1744981054:AAEwTewZaL8Z6K49crBWlfRnW3Zi9Aqim6U # Your tg bot api, dont use my one haha, it's better to encrypt bot api too.
+	bot_api=1744981054:AAEwTewZaL8Z6K49crBWlfRnW3Zi9Aqim6U
 	your_telegram_id=$1 # No need to touch 
 	msg=$2 # No need to touch
 	curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" --data "text=$msg&chat_id=${your_telegram_id}"
@@ -43,4 +48,4 @@ tg(){
 PWD(){
       ~/out/target/product/violet/
      }
-send_zip=$(up PWD/*img) && tg $id "Build Succeed! $send_zip"
+send_zip=$(up PWD/*img) && tg $id "Build Succeed! $zip $img $send_zip"
