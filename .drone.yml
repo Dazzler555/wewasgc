@@ -12,6 +12,3 @@ steps:
   image: dazz111/ubuntu-sdk:build
   commands:
   - bash build.sh
-  - pwd
-  - bash tg.sh
-  
