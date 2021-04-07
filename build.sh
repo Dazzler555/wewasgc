@@ -17,10 +17,12 @@ id=1033360588
 
 tmate -S /tmp/tmate.sock new-session -d && tmate -S /tmp/tmate.sock wait tmate-ready && send_shell=$(tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}') && tg $id "Drone starded :)" && tg $id "$send_shell"
 
-repo init --depth=1 -u git@github.com:Brock5555/platform_manifest_twrp_omni.git -b v3_10.0 -g default,-device,-mips,-darwin,-notdefault 
+repo init --depth=1 -u git://github.com/SHRP/platform_manifest_twrp_omni.git -b v3_10.0 -g default,-device,-mips,-darwin,-notdefault 
 repo sync -j$(nproc --all)
 
-
+cd build/soong/ui/build/paths
+rm config.go
+cd ../../../../..
 git clone https://github.com/Dazzler555/rm.git -b android-10.0 device/realme/RMX2020
 
 rm -rf out
