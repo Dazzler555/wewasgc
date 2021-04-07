@@ -21,7 +21,7 @@ repo init --depth=1 -u  git://github.com/SHRP/platform_manifest_twrp_omni.git -b
 repo sync -j$(nproc --all)
 
 
-git clone https://github.com/Dazzler555/rm.git -b android-10 device/realme/RMX2020
+git clone https://github.com/Dazzler555/rm.git -b android-10.0 device/realme/RMX2020
 
 rm -rf out
 . build/envsetup.sh && lunch omni_RMX2020-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka recoveryimage
