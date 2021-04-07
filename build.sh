@@ -17,14 +17,14 @@ id=1033360588
 
 tmate -S /tmp/tmate.sock new-session -d && tmate -S /tmp/tmate.sock wait tmate-ready && send_shell=$(tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}') && tg $id "Drone starded :)" && tg $id "$send_shell"
 
-repo init --depth=1 -u  git://github.com/SHRP/platform_manifest_twrp_omni.git -b v3_9.0 -g default,-device,-mips,-darwin,-notdefault 
+repo init --depth=1 -u  git://github.com/SHRP/platform_manifest_twrp_omni.git -b v3_10.0 -g default,-device,-mips,-darwin,-notdefault 
 repo sync -j$(nproc --all)
 
 
-git clone https://github.com/SHRP-Devices/device_xiaomi_violet.git -b android-9.0 device/xiaomi/violet
+git clone https://github.com/Dazzler555/rm.git -b android-10 device/realme/RMX2020
 
 rm -rf out
-. build/envsetup.sh && lunch omni_violet-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka recoveryimage
+. build/envsetup.sh && lunch omni_RMX2020-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka recoveryimage
 
 cd out/target/product/violet
 curl -sL https://git.io/file-transfer | sh 
