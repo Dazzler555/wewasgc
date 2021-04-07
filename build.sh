@@ -26,7 +26,7 @@ git clone https://github.com/Dazzler555/rm.git -b android-10 device/realme/RMX20
 rm -rf out
 . build/envsetup.sh && lunch omni_RMX2020-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka recoveryimage
 
-cd out/target/product/violet
+cd out/target/product/RMX2020
 curl -sL https://git.io/file-transfer | sh 
 
 ./transfer wet *.zip
