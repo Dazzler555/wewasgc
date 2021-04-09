@@ -20,7 +20,7 @@ tmate -S /tmp/tmate.sock new-session -d && tmate -S /tmp/tmate.sock wait tmate-r
 repo init --depth=1 -u git://github.com/SHRP/platform_manifest_twrp_omni.git -b v3_9.0 -g default,-device,-mips,-darwin,-notdefault 
 repo sync -j$(nproc --all)
 
-git clone https://github.com/SHRP-Devices/device_xiaomi_violet.git device/xiaomi/violet
+git clone https://github.com/Dazzler555/no-cp.git device/xiaomi/violet
 
 rm -rf out
 . build/envsetup.sh && lunch omni_violet-eng && export LC_ALL="C" && export ALLOW_MISSING_DEPENDENCIES=true && mka recoveryimage
