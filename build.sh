@@ -8,13 +8,16 @@ cd /tmp/recovery
 
 sudo apt install git -y
 
-repo init --depth=1 -u git://github.com/SHRP/platform_manifest_twrp_omni.git -b v3_10.0 -g default,-device,-mips,-darwin,-notdefault
- 
+# repo init --depth=1 -u git://github.com/SHRP/platform_manifest_twrp_omni.git -b v3_10.0 -g default,-device,-mips,-darwin,-notdefault
+
+repo init --depth=1 -u git://github.com/PitchBlackRecoveryProject/manifest_pb -b android-10.0 -g default,-device,-mips,-darwin,-notdefault 
+
+
 
 repo sync -j$(nproc --all)
 
 
-git clone https://github.com/Dazzler555/surtwr.git -b oss device/xiaomi/surya
+git clone https://github.com/Dazzler555/surtwr.git -b pb device/xiaomi/surya
 
 rm -rf out
 
