@@ -9,6 +9,6 @@ platform:
 
 steps:
 - name: test
-  image: dazz111/ubuntu-sdk:build
+  image: brock5555/recovery
   commands:
   - bash build.sh
