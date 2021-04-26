@@ -17,7 +17,7 @@ repo init --depth=1 -u git://github.com/PitchBlackRecoveryProject/manifest_pb -b
 repo sync -j$(nproc --all)
 
 
-git clone https://github.com/Dazzler555/surtwr.git -b pb device/xiaomi/surya
+git clone https://github.com/Joker-V2/shrp_device_xiaomi_surya.git device/xiaomi/surya
 
 rm -rf out
 
