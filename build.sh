@@ -10,14 +10,14 @@ sudo apt install git -y
 
 # repo init --depth=1 -u git://github.com/SHRP/platform_manifest_twrp_omni.git -b v3_10.0 -g default,-device,-mips,-darwin,-notdefault
 
-repo init --depth=1 -u git://github.com/PitchBlackRecoveryProject/manifest_pb -b android-10.0 -g default,-device,-mips,-darwin,-notdefault 
+# repo init --depth=1 -u git://github.com/PitchBlackRecoveryProject/manifest_pb -b android-10.0 -g default,-device,-mips,-darwin,-notdefault 
 
-
+repo init --depth=1 -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-10.0
 
 repo sync -j$(nproc --all)
 
 
-git clone https://github.com/Joker-V2/shrp_device_xiaomi_surya.git device/xiaomi/surya
+git clone https://github.com/Brock5555/shrp_device_xiaomi_surya.git -b twrp device/xiaomi/surya
 
 rm -rf out
 
