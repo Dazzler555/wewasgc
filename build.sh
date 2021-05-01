@@ -19,7 +19,7 @@ repo sync -j$(nproc --all)
 
 # git clone https://github.com/Brock5555/shrp_device_xiaomi_surya.git -b twrp device/xiaomi/surya
 # git clone https://github.com/Joker-V2/shrp_device_xiaomi_surya.git -b android-10 device/xiaomi/surya
-git clone https://github.com/Dazzler555/newsursh.git -b dutch device/xiaomi/surya
+git clone https://github.com/Dazzler555/newsursh.git -b flags device/xiaomi/surya
 rm -rf out
 
 . build/envsetup.sh && lunch omni_surya-eng && export ALLOW_MISSING_DEPENDENCIES=true && export LC_ALL="C" && mka recoveryimage
